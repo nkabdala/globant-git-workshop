@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Set List for The Show" >
+        <!-- for debugging -->        
+        <template if:true={error}>
+            <h5>{error}</h5>
+        </template>
+        <!-- for debugging -->
+        <template if:true={ready}>
+            <div style="padding:10px;"><h2>Playlist length: {setlistLength}</h2></div>
+        </template>  
+        <div style="height: 400px;">
+            <lightning-datatable
+                    key-field="Id"
+                    data={setlist}
+                    show-row-number-column
+                    hide-checkbox-column
+                    columns={columns}>
+            </lightning-datatable>            
+        </div>
+    </lightning-card> 
+</template>
